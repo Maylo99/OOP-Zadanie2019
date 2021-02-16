@@ -2,6 +2,7 @@ package PS;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class PetrihoSiet {
     private List<Integer> initialMarking;
@@ -26,13 +27,13 @@ public class PetrihoSiet {
     }
 
     public void consumerT(String ID){
-        List <String> consume=availableEdges.consumeMarks(ID);
-
-        for(String c:consume){
-            Integer value=initialMarking.get(availablePlaces.getIndexOfPlace(c));
-            value--;
-            initialMarking.set(availablePlaces.getIndexOfPlace(c),value);
-        }
+        Map<String,Integer> consume=availableEdges.consumeMarks("t2");
+        Integer aaa=1;
+//        for(String c:consume){
+//            Integer value=initialMarking.get(availablePlaces.getIndexOfPlace(c));
+//            value--;
+//            initialMarking.set(availablePlaces.getIndexOfPlace(c),value);
+//        }
     }
 
     public void producterT(String ID){
