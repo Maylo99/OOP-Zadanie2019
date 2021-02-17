@@ -8,11 +8,9 @@ public class Place extends PetrihoSiet{
     public Place(List<String> place) {
         this.place = place;
     }
-    public int getIndexOfPlace(String plc)
-    {
-        System.out.println();
-        return place.indexOf(plc);
-    }
 
+    public List<String> getPlace() {
+        return place;
+    }
 
 }
