@@ -8,9 +8,4 @@ public class Place extends PetrihoSiet{
     public Place(List<String> place) {
         this.place = place;
     }
-
-    public List<String> getPlace() {
-        return place;
-    }
-
 }
