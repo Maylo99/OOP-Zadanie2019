@@ -1,7 +1,6 @@
 package PS;
 import PS.CustomExceptions.InvalidEdgeException;
 import PS.CustomExceptions.LackOfMarksException;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,7 +21,6 @@ public class PetrihoSiet {
         }catch (InvalidEdgeException e){
             System.err.println(e);
         }
-
         initialMarking=marking;
         currentlyMarking=createCurrentlyMarking(place,marking);
 
