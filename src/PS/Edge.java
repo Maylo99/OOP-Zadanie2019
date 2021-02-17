@@ -1,7 +1,4 @@
 package PS;
-
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,34 +15,27 @@ public class Edge extends PetrihoSiet {
         this.edge = edge;
     }
 
-    public List<String> productMarks(String ID) {
+    public Map<String,Integer> productMarks(String ID) {
         ID = ID + "-";
-        List<String> TransitionToPlace = new ArrayList<>();
+        Map<String,Integer> TransitionToPlaceplace = new HashMap<>();
+        Integer i=0;
         for (String e : edge) {
             if (e.contains(ID)) {
                 e = e.replace(ID, "");
-                TransitionToPlace.add(e);
+                if (TransitionToPlaceplace.containsKey(e)){
+                    i=TransitionToPlaceplace.get(e)+1;
+                    TransitionToPlaceplace.put(e,i);
+                }
+                else
+                    TransitionToPlaceplace.put(e,1);
             }
         }
-        return TransitionToPlace;
+        return TransitionToPlaceplace;
     }
-
-//    public List<String> consumeMarks(String ID) {
-//        ID = "-" + ID;
-//        List<String> placeToTransition = new ArrayList<>();
-//        for (String e : edge) {
-//            if (e.contains(ID)) {
-//                e = e.replace(ID, "");
-//                placeToTransition.add(e);
-//            }
-//        }
-//        return placeToTransition;
-//    }
     public Map<String,Integer> consumeMarks(String ID) {
         ID = "-" + ID;
         Map<String,Integer> placeToTransition = new HashMap<>();
         Integer i=0;
-
 
         for (String e : edge) {
             if (e.contains(ID)) {

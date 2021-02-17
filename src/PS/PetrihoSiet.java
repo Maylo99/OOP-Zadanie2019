@@ -37,14 +37,14 @@ public class PetrihoSiet {
     }
 
     public void producterT(String ID){
-        List <String> product=availableEdges.productMarks(ID);
-
-        for(String p:product){
-            int index=availablePlaces.getIndexOfPlace(p);
-            Integer value=initialMarking.get(index);
-            value++;
-            initialMarking.set(availablePlaces.getIndexOfPlace(p),value);
-        }
+        Map <String,Integer> product=availableEdges.productMarks(ID);
+        Integer aaa=1;
+//        for(String p:product){
+//            int index=availablePlaces.getIndexOfPlace(p);
+//            Integer value=initialMarking.get(index);
+//            value++;
+//            initialMarking.set(availablePlaces.getIndexOfPlace(p),value);
+//        }
 
     }
     public void startsTransition(String ID)
